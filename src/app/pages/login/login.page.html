@@ -1,0 +1,50 @@
+<ion-content>
+  <form class="setter-content" (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="input-group">
+      <ion-item>
+        <ion-input
+          type="text"
+          placeholder="Username"
+          formControlName="username"
+        ></ion-input>
+      </ion-item>
+      <div *ngIf="username.errors" class="errors">
+        <span *ngIf="username.errors?.required">Username is required</span>
+      </div>
+      <ion-item>
+        <ion-input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        ></ion-input>
+      </ion-item>
+      <div *ngIf="password.errors" class="errors">
+        <span *ngIf="password.errors?.required">Password is required</span>
+      </div>
+    </div>
+
+    <ion-button
+      class="login-btn"
+      type="submit"
+      expand="block"
+      [disabled]="!form.valid"
+      >Log in</ion-button
+    >
+    <ion-button
+      (click)="routeTo('/register')"
+      type="button"
+      expand="block"
+      color="dark"
+      fill="clear"
+      >Not yet a member? Sign up!
+    </ion-button>
+    <ion-button
+      (click)="routeTo('/forgot-password')"
+      type="button"
+      expand="block"
+      color="dark"
+      fill="clear"
+      >Forgot Password
+    </ion-button>
+  </form>
+</ion-content>

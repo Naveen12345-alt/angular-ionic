@@ -1,0 +1,54 @@
+<ion-content>
+  <ion-list class="setter-content">
+    <ion-list-header>
+      <ion-label> Select Users </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Users:</ion-label>
+      <ion-select
+        (ionChange)="doFilter(filterUsername)"
+        multiple="true"
+        [(ngModel)]="filterUsername"
+      >
+        <ion-select-option *ngFor="let option of options" [value]="option"
+          >{{option}}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon
+        class="notifications-icon"
+        name="add"
+        (click)="openDialog('Add',{},options)"
+      ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div *ngFor="let data of filteredData">
+    <ion-card>
+      <ion-card-header>
+        <div class="task-top-content">
+          <ion-card-title>{{data.id}}:{{data.name}}</ion-card-title>
+          <div class="task-top-icon">
+            <ion-icon
+              name="create-outline"
+              (click)="openDialog('Update',data,options)"
+            ></ion-icon>
+            <ion-icon
+              name="trash-outline"
+              (click)="onDelete('Delete',data)"
+            ></ion-icon>
+          </div>
+        </div>
+        <ion-card-subtitle>{{data.description}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        User : {{data.user}} will be notified on {{data.date | date: "M/d/yy,
+        h:mm a"}}.
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

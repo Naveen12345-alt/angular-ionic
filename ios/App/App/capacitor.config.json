@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "task-alert",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

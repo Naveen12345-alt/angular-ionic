@@ -1,0 +1,38 @@
+ion-card,
+ion-item,
+ion-select {
+  --background: hsl(105, 67%, 96%);
+}
+
+ion-card-content {
+  border-bottom: 1px solid hsl(111, 48%, 87%);
+}
+
+.modal-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem;
+}
+
+ion-input {
+  --color: black;
+  --placeholder-color: black;
+  --placeholder-opacity: 1;
+  --padding-start: 0;
+}
+
+.dialog-input {
+  color: black;
+}
+
+.date-card {
+  padding-left: 0;
+}
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}

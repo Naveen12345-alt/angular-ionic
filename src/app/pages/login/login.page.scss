@@ -1,0 +1,23 @@
+ion-content {
+  --padding-top: 40%;
+  --padding-start: 10%;
+  --padding-end: 10%;
+  --background: url("https://preview.redd.it/gzdluxp4l2141.png?width=1242&format=png&auto=webp&s=0c9daf36424999f1c60f10f41ed8858513899c1e")
+    50% 0/20% 20% no-repeat white;
+}
+
+.input-group {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.errors {
+  font-size: small;
+  color: #fff;
+  background: var(--ion-color-danger);
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

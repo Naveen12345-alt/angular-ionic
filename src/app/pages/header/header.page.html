@@ -1,0 +1,25 @@
+<ion-header class="ion-header">
+  <div class="task-top-content">
+    <ion-toolbar class="ion-toolbar-mod">
+      <ion-title>Task Alert</ion-title>
+    </ion-toolbar>
+    <div class="task-top-icon-mod" *ngIf="loggedIn">
+      <div class="task-notifications-icon">
+        <ion-badge>{{numberOfNotifications}}</ion-badge>
+        <ion-icon
+          class="notifications-icon"
+          size="small"
+          name="notifications-outline"
+          (click)="openNotifications()"
+        >
+        </ion-icon>
+      </div>
+      <ion-icon
+        class="logout-icon"
+        size="small"
+        name="log-out-outline"
+        (click)="logout()"
+      ></ion-icon>
+    </div>
+  </div>
+</ion-header>

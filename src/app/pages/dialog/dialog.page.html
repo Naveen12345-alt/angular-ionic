@@ -1,0 +1,63 @@
+<ion-content>
+  <ion-card *ngIf="action!=='Notifications'">
+    <form (ngSubmit)="doAction()" [formGroup]="form">
+      <ion-card-content>
+        <ion-input
+          placeholder="Enter Task Heading"
+          type="text"
+          formControlName="name"
+        ></ion-input>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-input
+          placeholder="Enter Task Description"
+          type="text"
+          formControlName="description"
+        ></ion-input>
+      </ion-card-content>
+      <ion-card-content class="date-card">
+        <ion-item>
+          <ion-label class="ion-label">User:</ion-label>
+          <ion-select
+            placeholder="Enter Username"
+            type="text"
+            formControlName="user"
+          >
+            <ion-select-option *ngFor="let option of options" [value]="option"
+              >{{option}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-card-content>
+      <ion-card-content class="date-card">
+        <ion-datetime
+          class="dialog-input"
+          placeholder="Enter Date"
+          type="date"
+          formControlName="date"
+          displayFormat="MM/DD/YYYY"
+          display-timezone="utc"
+        ></ion-datetime>
+      </ion-card-content>
+    </form>
+    <div class="modal-button">
+      <ion-button color="secondary" (click)="doAction()"
+        >{{action}}
+      </ion-button>
+      <ion-button color="danger" (click)="closeDialog()">Cancel </ion-button>
+    </div>
+  </ion-card>
+
+  <div *ngIf="action==='Notifications'" class="notifications">
+    <ion-card *ngFor="let data of localData">
+      <ion-card-header>
+        <ion-card-title>{{data.name}}</ion-card-title>
+        <ion-card-subtitle>{{data.description}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{data?.date | date: "M/d/yy, h:mm a"}}
+      </ion-card-content>
+    </ion-card>
+    <ion-button color="danger" (click)="closeDialog()">Cancel </ion-button>
+  </div>
+</ion-content>

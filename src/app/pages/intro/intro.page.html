@@ -1,0 +1,31 @@
+<ion-content>
+  <swiper class="setter-content" #swiper [virtual]="true">
+    <!-- Slide 1 -->
+    <ng-template swiperSlide>
+      <ion-text color="dark">
+        <img
+          src="https://preview.redd.it/gzdluxp4l2141.png?width=1242&format=png&auto=webp&s=0c9daf36424999f1c60f10f41ed8858513899c1e"
+        />
+        <h1>Hey there!</h1>
+        <p>This is an epic app because...</p>
+        <ion-button (click)="next()" fill="outline" color="dark"
+          >Next</ion-button
+        >
+      </ion-text>
+    </ng-template>
+
+    <!-- Slide 2 -->
+    <ng-template swiperSlide>
+      <ion-text color="dark">
+        <img
+          src="https://preview.redd.it/gzdluxp4l2141.png?width=1242&format=png&auto=webp&s=0c9daf36424999f1c60f10f41ed8858513899c1e"
+        />
+        <h1>It's Ionic!</h1>
+        <p>... and it's my first attempt!</p>
+        <ion-button (click)="start()" fill="outline" color="dark"
+          >Start</ion-button
+        >
+      </ion-text>
+    </ng-template>
+  </swiper>
+</ion-content>
